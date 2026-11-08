@@ -1,0 +1,93 @@
+{
+    "generated_at": "2026-11-04T13:33:53.708016+00:00",
+    "tasks_requested": 1000,
+    "tasks_submitted": 1000,
+    "submission_errors": 0,
+    "tasks_completed": 1000,
+    "succeeded": 1000,
+    "dead": 0,
+    "cancelled": 0,
+    "timed_out_or_still_active": 0,
+    "submission_duration_seconds": 15.6527,
+    "total_duration_seconds": 272.9015,
+    "submission_throughput_tasks_per_second": 63.8866,
+    "end_to_end_completion_throughput_tasks_per_second": 3.6643,
+    "average_submission_latency_seconds": 0.3102,
+    "p95_submission_latency_seconds": 0.4993,
+    "average_observed_completion_latency_seconds": 133.8518,
+    "p50_observed_completion_latency_seconds": 134.5667,
+    "p95_observed_completion_latency_seconds": 245.4523,
+    "p99_observed_completion_latency_seconds": 254.0914,
+    "success_rate_percent": 100.0,
+    "submission_failure_rate_percent": 0.0,
+    "poll_requests": 21084,
+    "polling_errors": 3858,
+    "polling_error_types": {
+        "URLError": 3858
+    },
+    "polling_error_examples": [
+        {
+            "task_id": "f6ba02bc-e42a-4a35-820e-9b9611644357",
+            "kind": "URLError",
+            "status_code": null,
+            "message": "<urlopen error [WinError 10048] Only one usage of each socket address (protocol/network address/port) is normally permitted>"
+        },
+        {
+            "task_id": "27c67023-a255-48ee-ab0d-d11b385eb546",
+            "kind": "URLError",
+            "status_code": null,
+            "message": "<urlopen error [WinError 10048] Only one usage of each socket address (protocol/network address/port) is normally permitted>"
+        },
+        {
+            "task_id": "1217ca29-fef4-4d2b-ac18-7af6aed8c218",
+            "kind": "URLError",
+            "status_code": null,
+            "message": "<urlopen error [WinError 10048] Only one usage of each socket address (protocol/network address/port) is normally permitted>"
+        },
+        {
+            "task_id": "6459dab0-eb1b-4fac-a965-03c427778c39",
+            "kind": "URLError",
+            "status_code": null,
+            "message": "<urlopen error [WinError 10048] Only one usage of each socket address (protocol/network address/port) is normally permitted>"
+        },
+        {
+            "task_id": "5098c15f-9048-4695-a764-0a640ac87cfe",
+            "kind": "URLError",
+            "status_code": null,
+            "message": "<urlopen error [WinError 10048] Only one usage of each socket address (protocol/network address/port) is normally permitted>"
+        },
+        {
+            "task_id": "a6491982-9d8e-456f-9b76-0d2f6fc2f10c",
+            "kind": "URLError",
+            "status_code": null,
+            "message": "<urlopen error [WinError 10048] Only one usage of each socket address (protocol/network address/port) is normally permitted>"
+        },
+        {
+            "task_id": "5da0fdf8-f6e8-4ff5-814e-828a80e8a017",
+            "kind": "URLError",
+            "status_code": null,
+            "message": "<urlopen error [WinError 10048] Only one usage of each socket address (protocol/network address/port) is normally permitted>"
+        },
+        {
+            "task_id": "b1fe6ad1-e506-436d-9558-7a50e0322bbe",
+            "kind": "URLError",
+            "status_code": null,
+            "message": "<urlopen error [WinError 10048] Only one usage of each socket address (protocol/network address/port) is normally permitted>"
+        },
+        {
+            "task_id": "769f0dc0-4ac1-4311-b3f0-f266f17d4360",
+            "kind": "URLError",
+            "status_code": null,
+            "message": "<urlopen error [WinError 10048] Only one usage of each socket address (protocol/network address/port) is normally permitted>"
+        },
+        {
+            "task_id": "1cc462f9-9480-45ab-9c0a-7e76938a12f8",
+            "kind": "URLError",
+            "status_code": null,
+            "message": "<urlopen error [WinError 10048] Only one usage of each socket address (protocol/network address/port) is normally permitted>"
+        }
+    ],
+    "average_poll_request_latency_seconds": 0.09506263862170587,
+    "submission_error_examples": [],
+    "timed_out_task_ids": []
+}

@@ -1,0 +1,88 @@
+
+services:
+  redis:
+    image: redis:7-alpine
+    ports:
+      - "6379:6379"
+    command: redis-server --appendonly yes
+    volumes:
+      - redis_data:/data
+    healthcheck:
+      test: ["CMD", "redis-cli", "ping"]
+      interval: 5s
+      timeout: 3s
+      retries: 5
+    restart: unless-stopped
+
+  api:
+    build: .
+    command: uvicorn app.main:app --host 0.0.0.0 --port 8000
+    ports:
+      - "8000:8000"
+    environment:
+      REDIS_HOST: redis
+      REDIS_PORT: 6379
+      REDIS_DB: 0
+    depends_on:
+      redis:
+        condition: service_healthy
+    restart: unless-stopped
+
+  worker:
+    build: .
+    command:
+      - sh
+      - -c
+      - 'python -m app.workers.worker_runner --worker-id "$$HOSTNAME" --poll-interval 1'
+    environment:
+      REDIS_HOST: redis
+      REDIS_PORT: 6379
+      REDIS_DB: 0
+    depends_on:
+      redis:
+        condition: service_healthy
+    restart: unless-stopped
+    init: true
+
+  delayed-scheduler:
+    build: .
+    command:
+      - python
+      - -m
+      - app.workers.delayed_scheduler_runner
+      - --poll-interval
+      - "1"
+      - --batch-size
+      - "100"
+    environment:
+      REDIS_HOST: redis
+      REDIS_PORT: 6379
+      REDIS_DB: 0
+    depends_on:
+      redis:
+        condition: service_healthy
+    restart: unless-stopped
+
+  recovery-worker:
+    build: .
+    command:
+      - python
+      - -m
+      - app.workers.recovery_runner
+      - --visibility-timeout
+      - "30"
+      - --poll-interval
+      - "5"
+      - --batch-size
+      - "100"
+    environment:
+      REDIS_HOST: redis
+      REDIS_PORT: 6379
+      REDIS_DB: 0
+    depends_on:
+      redis:
+        condition: service_healthy
+    restart: unless-stopped
+
+volumes:
+  redis_data:

@@ -1,0 +1,20 @@
+{
+    "generated_at": "2026-11-04T13:18:58.460589+00:00",
+    "tasks_requested": 1000,
+    "tasks_submitted": 1000,
+    "submission_errors": 0,
+    "tasks_completed": 1000,
+    "succeeded": 1000,
+    "dead": 0,
+    "cancelled": 0,
+    "timed_out": 0,
+    "polling_errors": 3866,
+    "duration_seconds": 280.7402,
+    "submission_throughput_tasks_per_second": 3.562,
+    "completion_throughput_tasks_per_second": 3.562,
+    "average_submission_latency_seconds": 0.3723,
+    "average_completion_latency_seconds": 136.2934,
+    "p50_completion_latency_seconds": 136.41,
+    "p95_completion_latency_seconds": 250.2671,
+    "p99_completion_latency_seconds": 258.8529
+}

@@ -1,0 +1,14 @@
+
+.venv/
+.git/
+.pytest_cache/
+__pycache__/
+*.pyc
+*.pyo
+*.pyd
+.env
+.vscode/
+.idea/
+tests/
+load_test_results*.json
+task_timing_results*.json
